@@ -2,10 +2,6 @@
 {
   "presubmit": [
     {
-      "host": true,
-      "name": "memoffset_host_test_src_lib"
-    },
-    {
       "name": "memoffset_device_test_src_lib"
     }
   ]
