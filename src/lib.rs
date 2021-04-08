@@ -56,7 +56,7 @@
 //! let checksum = crc16(checksum_range);
 //! ```
 
-// ANDROID: include standard library to build as a dynlib
+// ANDROID: include standard library to build as a dylib
 //#![no_std]
 #![cfg_attr(
     feature = "unstable_const",
@@ -68,7 +68,6 @@
         const_raw_ptr_deref,
     )
 )]
-#![cfg_attr(feature = "unstable_raw", feature(raw_ref_macros))]
 
 #[macro_use]
 #[cfg(doctests)]
@@ -78,12 +77,20 @@ extern crate doc_comment;
 #[cfg(doctest)]
 doctest!("../README.md");
 
-// This `use` statement enables the macros to use `$crate::mem`.
-// Doing this enables this crate to function under both std and no-std crates.
+/// Hiden module for things the macros need to access.
 #[doc(hidden)]
-pub use std::mem;  // ANDROID: use std instead of core, since we're not building wiht no-std.
-#[doc(hidden)]
-pub use std::ptr;  // ANDROID: use std instead of core, since we're not building wiht no-std.
+pub mod __priv {
+    #[doc(hidden)]
+    pub use std::mem;  // ANDROID: use std instead of core, since we're not building with no-std.
+    #[doc(hidden)]
+    pub use std::ptr;  // ANDROID: use std instead of core, since we're not building with no-std.
+
+    /// Use type inference to obtain the size of the pointee (without actually using the pointer).
+    #[doc(hidden)]
+    pub fn size_of_pointee<T>(_ptr: *const T) -> usize {
+        mem::size_of::<T>()
+    }
+}
 
 #[macro_use]
 mod raw_field;
