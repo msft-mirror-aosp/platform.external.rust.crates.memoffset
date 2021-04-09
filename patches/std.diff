@@ -7,23 +7,23 @@ index c85fb01..25b0444 100644
  //! ```
  
 -#![no_std]
-+// ANDROID: include standard library to build as a dynlib
++// ANDROID: include standard library to build as a dylib
 +//#![no_std]
  #![cfg_attr(
      feature = "unstable_const",
      feature(
-@@ -80,9 +81,9 @@ doctest!("../README.md");
- // This `use` statement enables the macros to use `$crate::mem`.
- // Doing this enables this crate to function under both std and no-std crates.
+@@ -78,9 +79,9 @@
  #[doc(hidden)]
--pub use core::mem;
-+pub use std::mem;  // ANDROID: use std instead of core, since we're not building wiht no-std.
- #[doc(hidden)]
--pub use core::ptr;
-+pub use std::ptr;  // ANDROID: use std instead of core, since we're not building wiht no-std.
+ pub mod __priv {
+     #[doc(hidden)]
+-    pub use core::mem;
++    pub use std::mem;  // ANDROID: use std instead of core, since we're not building with no-std.
+     #[doc(hidden)]
+-    pub use core::ptr;
++    pub use std::ptr;  // ANDROID: use std instead of core, since we're not building with no-std.
  
- #[macro_use]
- mod raw_field;
+     /// Use type inference to obtain the size of the pointee (without actually using the pointer).
+     #[doc(hidden)]
 diff --git a/src/span_of.rs b/src/span_of.rs
 index 0592dbd..369e5c6 100644
 --- a/src/span_of.rs
