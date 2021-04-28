@@ -2,18 +2,7 @@ diff --git a/Android.bp b/Android.bp
 index eb63f7c..efa8362 100644
 --- a/Android.bp
 +++ b/Android.bp
-@@ -13,6 +13,10 @@ rust_library {
-         "--cfg maybe_uninit",
-         "--cfg tuple_ty",
-     ],
-+    apex_available: [
-+        "//apex_available:platform",
-+        "com.android.virt",
-+    ],
- }
- 
- rust_defaults {
-@@ -30,7 +34,8 @@ rust_defaults {
+@@ -48,7 +52,8 @@ rust_defaults {
          "--cfg tuple_ty",
      ],
      rustlibs: [
