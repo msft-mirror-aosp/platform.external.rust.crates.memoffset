@@ -53,10 +53,6 @@ rust_defaults {
         "raw_ref_macros",
         "tuple_ty",
     ],
-    rustlibs: [
-        // ANDROID: disable for now just to avoid another dependency.
-        //"libdoc_comment",
-    ],
 }
 
 rust_test_host {
