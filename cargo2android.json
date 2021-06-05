@@ -4,8 +4,10 @@
     "com.android.virt"
   ],
   "dependencies": true,
+  "dependency-blocklist": [
+    "doc_comment"
+  ],
   "device": true,
-  "patch": "patches/Android.bp.patch",
   "run": true,
   "tests": true
 }
