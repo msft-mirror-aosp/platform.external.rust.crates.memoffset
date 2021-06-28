@@ -34,6 +34,7 @@ rust_library {
     ],
     apex_available: [
         "//apex_available:platform",
+        "com.android.compos",
         "com.android.virt",
     ],
 }
@@ -52,10 +53,6 @@ rust_defaults {
         "maybe_uninit",
         "raw_ref_macros",
         "tuple_ty",
-    ],
-    rustlibs: [
-        // ANDROID: disable for now just to avoid another dependency.
-        //"libdoc_comment",
     ],
 }
 
