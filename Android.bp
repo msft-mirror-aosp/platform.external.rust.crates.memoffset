@@ -21,6 +21,7 @@ license {
 rust_library {
     name: "libmemoffset",
     host_supported: true,
+    vendor_available: true,
     crate_name: "memoffset",
     srcs: ["src/lib.rs"],
     edition: "2015",
