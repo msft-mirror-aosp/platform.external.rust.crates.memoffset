@@ -5,6 +5,7 @@
     "com.android.virt"
   ],
   "dependencies": true,
+  "vendor_available": true,
   "dependency-blocklist": [
     "doc_comment"
   ],
