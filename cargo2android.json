@@ -1,6 +1,7 @@
 {
   "apex-available": [
     "//apex_available:platform",
+    "com.android.bluetooth",
     "com.android.compos",
     "com.android.virt"
   ],
@@ -9,6 +10,7 @@
     "doc_comment"
   ],
   "device": true,
+  "min-sdk-version": "29",
   "run": true,
   "tests": true,
   "vendor-available": true
