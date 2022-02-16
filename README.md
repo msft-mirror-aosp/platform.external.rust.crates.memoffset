@@ -69,5 +69,7 @@ features = ["unstable_const"]
 
 Your crate root: (`lib.rs`/`main.rs`)
 ```rust,ignore
-#![feature(const_ptr_offset_from, const_maybe_uninit_as_ptr, const_raw_ptr_deref, const_refs_to_cell)]
+#![feature(ptr_offset_from, const_ptr_offset_from, const_maybe_uninit_as_ptr, const_raw_ptr_deref)]
 ```
+
+If you intend to use `offset_of!` inside a `const fn`, also add the `const_fn` compiler feature.
