@@ -24,7 +24,8 @@
 //!
 //! ## Examples
 //! ```
-//! use memoffset::{offset_of, span_of};
+//! #[macro_use]
+//! extern crate memoffset;
 //!
 //! #[repr(C, packed)]
 //! struct HelpMeIAmTrappedInAStructFactory {
@@ -59,7 +60,13 @@
 //#![no_std]
 #![cfg_attr(
     feature = "unstable_const",
-    feature(const_ptr_offset_from, const_refs_to_cell)
+    feature(
+        ptr_offset_from,
+        const_fn,
+        const_ptr_offset_from,
+        const_maybe_uninit_as_ptr,
+        const_raw_ptr_deref,
+    )
 )]
 
 #[macro_use]
@@ -70,7 +77,7 @@ extern crate doc_comment;
 #[cfg(doctest)]
 doctest!("../README.md");
 
-/// Hidden module for things the macros need to access.
+/// Hiden module for things the macros need to access.
 #[doc(hidden)]
 pub mod __priv {
     #[doc(hidden)]
