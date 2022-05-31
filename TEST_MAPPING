@@ -23,7 +23,13 @@
       "path": "external/rust/crates/unicode-xid"
     }
   ],
-  "presubmit": [
+  "postsubmit": [
+    {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
     {
       "name": "ZipFuseTest"
     },
@@ -49,7 +55,75 @@
       "name": "diced_vendor_test"
     },
     {
+      "name": "keystore2_client_tests"
+    },
+    {
       "name": "keystore2_crypto_test_rust"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
+      "name": "keystore2_selinux_concurrency_test"
+    },
+    {
+      "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
+    },
+    {
+      "name": "legacykeystore_test"
+    },
+    {
+      "name": "memoffset_test_src_lib"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "virtualizationservice_device_test"
+    }
+  ],
+  "presubmit": [
+    {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "apkdmverity.test"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
+    {
+      "name": "diced_open_dice_cbor_test"
+    },
+    {
+      "name": "diced_sample_inputs_test"
+    },
+    {
+      "name": "diced_test"
+    },
+    {
+      "name": "diced_utils_test"
+    },
+    {
+      "name": "diced_vendor_test"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_crypto_test_rust"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_selinux_concurrency_test"
@@ -75,6 +149,12 @@
   ],
   "presubmit-rust": [
     {
+      "name": "VtsAidlDiceDemoteTargetTest"
+    },
+    {
+      "name": "VtsAidlDiceTargetTest"
+    },
+    {
       "name": "ZipFuseTest"
     },
     {
@@ -99,7 +179,13 @@
       "name": "diced_vendor_test"
     },
     {
+      "name": "keystore2_client_tests"
+    },
+    {
       "name": "keystore2_crypto_test_rust"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_selinux_concurrency_test"
