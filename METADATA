@@ -11,13 +11,13 @@ third_party {
   }
   url {
     type: ARCHIVE
-    value: "https://static.crates.io/crates/memoffset/memoffset-0.7.1.crate"
+    value: "https://static.crates.io/crates/memoffset/memoffset-0.8.0.crate"
   }
-  version: "0.7.1"
+  version: "0.8.0"
   license_type: NOTICE
   last_upgrade_date {
-    year: 2022
-    month: 12
-    day: 12
+    year: 2023
+    month: 2
+    day: 3
   }
 }
