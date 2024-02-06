@@ -1,5 +1,4 @@
 {
-  "min_sdk_version": "29",
   "package": {
     "memoffset": {
       "dep_blocklist": [
@@ -7,5 +6,10 @@
       ]
     }
   },
-  "tests": true
+  "variants": [
+    {
+      "min_sdk_version": "29",
+      "tests": true
+    }
+  ]
 }
