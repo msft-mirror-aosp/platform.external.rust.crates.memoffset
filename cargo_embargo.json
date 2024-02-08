@@ -9,6 +9,9 @@
   "variants": [
     {
       "min_sdk_version": "29",
+      "extra_cfg": [
+        "aosp_force_use_std"
+      ],
       "tests": true
     }
   ]
