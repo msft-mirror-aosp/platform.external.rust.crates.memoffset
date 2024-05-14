@@ -37,7 +37,6 @@ rust_library {
         "raw_ref_macros",
         "stable_const",
         "tuple_ty",
-        "aosp_force_use_std",
     ],
     apex_available: [
         "//apex_available:platform",
@@ -70,7 +69,6 @@ rust_test {
         "raw_ref_macros",
         "stable_const",
         "tuple_ty",
-        "aosp_force_use_std",
     ],
 }
 
