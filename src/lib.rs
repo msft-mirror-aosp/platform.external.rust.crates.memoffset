@@ -55,13 +55,13 @@
 //! let checksum = crc16(checksum_range);
 //! ```
 
-// ANDROID: include standard library to build as a dylib
-//#![no_std]
+#![cfg_attr(not(aosp_force_use_std), no_std)]
 #![cfg_attr(
     all(feature = "unstable_const", not(stable_const)),
     feature(const_ptr_offset_from)
 )]
 #![cfg_attr(feature = "unstable_const", feature(const_refs_to_cell))]
+#![cfg_attr(feature = "unstable_offset_of", feature(allow_internal_unstable))]
 
 #[macro_use]
 #[cfg(doctests)]
@@ -75,9 +75,9 @@ doctest!("../README.md");
 #[doc(hidden)]
 pub mod __priv {
     #[doc(hidden)]
-    pub use std::mem;  // ANDROID: use std instead of core, since we're not building with no-std.
+    pub use core::mem;
     #[doc(hidden)]
-    pub use std::ptr;  // ANDROID: use std instead of core, since we're not building with no-std.
+    pub use core::ptr;
 
     /// Use type inference to obtain the size of the pointee (without actually using the pointer).
     #[doc(hidden)]
