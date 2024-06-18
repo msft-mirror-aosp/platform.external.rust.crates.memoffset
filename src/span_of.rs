@@ -155,8 +155,7 @@ macro_rules! span_of {
 
 #[cfg(test)]
 mod tests {
-    // ANDROID: use std instead of core, since we're not building wiht no-std.
-    use std::mem;
+    use core::mem;
 
     #[test]
     fn span_simple() {
